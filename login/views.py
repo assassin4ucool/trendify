@@ -5,9 +5,8 @@ from django.shortcuts import render
 def index(request):
 	user = None
 	if request.user.is_authenticated():
-		user = request.user.username
+		user = request.user.username.title
         
 	template = "index.html"
-	user = "amit"
 	context = {user:"user"}
 	return render(request,template,context)
